@@ -1,0 +1,230 @@
+/* ---------------------------------
+   Alapstílusok
+----------------------------------- */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #444;
+}
+
+/* ---------------------------------
+   Header, Navbar, and Topnav Styles
+----------------------------------- */
+
+header {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    background-color: #555;
+    overflow: auto;
+}
+
+.navbar a {
+    float: left;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar a:hover {
+    background-color: #000;
+}
+
+.active {
+    background-color: #04AA6D;
+}
+
+@media screen and (max-width: 500px) {
+    .navbar a {
+        float: none;
+        display: block;
+    }
+}
+
+/* ---------------------------------
+   Login Button & Search Bar
+----------------------------------- */
+
+.topnav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.search-input {
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #555;
+}
+
+.login-btn {
+    display: flex;
+    align-items: center;
+    background-color: #444;
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.login-btn i {
+    margin-right: 6px;
+}
+
+.login-btn:hover {
+    background-color: #555;
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 600px) {
+    .topnav {
+        flex-direction: column;
+    }
+
+    .search-input {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .login-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ---------------------------------
+   Card Styles and Button
+----------------------------------- */
+
+.card {
+    display: none; /* Only show when needed */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 350px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card input,
+.card select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.card p {
+    margin-bottom: 5px;
+}
+
+button.submit-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button.submit-btn:hover {
+    background-color: #218838;
+}
+
+/* Show card button */
+.show-card-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.show-card-button:hover {
+    background-color: #0056b3;
+}
+
+/* ---------------------------------
+   Image Upload
+----------------------------------- */
+
+#image-upload {
+    margin-top: 10px;
+    border: 1px solid red; /* Initial state for no image */
+}
+
+/* ---------------------------------
+   Footer Styles
+----------------------------------- */
+
+footer {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+footer p {
+    color: #666;
+}
+
+/* ---------------------------------
+   Media Queries for smaller screens
+----------------------------------- */
+
+@media screen and (max-width: 600px) {
+    .topnav a,
+    .topnav input[type=text] {
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+    }
+
+    .topnav input[type=text] {
+        border: 1px solid #ccc;
+    }
+}

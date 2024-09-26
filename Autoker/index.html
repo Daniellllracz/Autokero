@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="autoApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autok</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="css/style">
+</head>
+<body ng-controller="MainController">
+    <div class="container">
+        <h1>Autok</h1>
+        <form method="post" action="">
+            <input type="search" ng-model="kifejezes">
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Márka</th>
+                    <th>Model</th>
+                    <th>Kivitel</th>
+                    <th>KM</th>
+                    <th>Le</th>
+                    <th>Ár</th>
+                    <th>Üzemanyag tipus</th>
+                    <th>Váltó tipus</th>
+                    <th>Fotó</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="auto in autok | filter:search">
+                    <td>{{auto.id}}</td>
+                    <td>{{auto.marka}}</td>
+                    <td>{{auto.model}}</td>
+                    <td>{{auto.kivitel}}</td>
+                    <td>{{auto.km}}</td>
+                    <td>{{auto.le}}</td>
+                    <td>{{auto.ar}}</td>
+                    <td>{{auto.uzemanyag_tipus}}</td>
+                    <td>{{auto.valto_tipus}}</td>
+                    <td><img src="img/{{auto.img_name}}" alt="{{auto.marka}}"></td>
+
+                    <td><a href="torles.php?id={{user.id}}">Törlés</a> | <a href="modositas.php?id={{user.id}}">Módosítás</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        let app = angular.module('autoApp', []);
+
+        app.controller('MainController', function($scope, $http) {
+            $http.get('http://localhost/webzitnek-main/batmanhelyettfaszsag/backend/endpoint.php')
+            .then(function(response) {
+                $scope.autok = response.data;
+                console.log($scope.autok);
+            }, function(error) {
+                console.error('Error fetching data:', error);
+            });
+        });
+    </script>
+</body>
+</html>
